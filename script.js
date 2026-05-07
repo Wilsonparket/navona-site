@@ -30,7 +30,7 @@
 
   // Reveal on scroll
   const targets = document.querySelectorAll(
-    '.manifesto__inner, .material__text, .material__media, .origem__head, .origem__grid, .projetos__head, .gallery__item, .aplicacoes__head, .app, .contato__inner'
+    '.manifesto__inner, .material__text, .material__media, .origem__head, .origem__grid, .projetos__head, .produto, .contato__inner'
   );
   targets.forEach(el => el.classList.add('reveal'));
 
@@ -48,176 +48,73 @@
     targets.forEach(el => el.classList.add('is-visible'));
   }
 
-  // Carousel
-  const carousel = document.getElementById('carousel');
-  if (carousel) {
-    const viewport = carousel.querySelector('[data-viewport]');
-    const slides = viewport.querySelectorAll('.carousel__slide');
+  // Lightbox + Produtos
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    const lbImg = lightbox.querySelector('.lightbox__img');
+    const lbCap = lightbox.querySelector('.lightbox__caption');
+    let zoomed = false;
 
-    const slideStep = () => {
-      if (slides.length < 2) return slides[0]?.getBoundingClientRect().width || 0;
-      const a = slides[0].getBoundingClientRect().left;
-      const b = slides[1].getBoundingClientRect().left;
-      return b - a;
+    const setOrigin = (e) => {
+      const rect = lbImg.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      lbImg.style.transformOrigin = `${Math.max(0, Math.min(100, x))}% ${Math.max(0, Math.min(100, y))}%`;
     };
 
-    const atEnd = () =>
-      viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 1;
-
-    const advance = () => {
-      if (atEnd()) viewport.scrollTo({ left: 0, behavior: 'smooth' });
-      else viewport.scrollBy({ left: slideStep(), behavior: 'smooth' });
+    const resetZoom = () => {
+      zoomed = false;
+      lbImg.classList.remove('is-zoomed');
+      lbImg.style.transformOrigin = '';
     };
 
-    // Auto-scroll
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let autoTimer = null;
-    let resumeTimer = null;
-    const INTERVAL = 4000;
-
-    const play = () => {
-      if (reduced) return;
-      pause();
-      autoTimer = setInterval(advance, INTERVAL);
-    };
-    const pause = () => {
-      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
-    };
-    const resumeLater = (delay = 6000) => {
-      if (resumeTimer) clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(play, delay);
+    const openLb = (src, alt, caption) => {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lbCap.textContent = caption || '';
+      resetZoom();
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lb-open');
     };
 
-    carousel.addEventListener('mouseenter', pause);
-    carousel.addEventListener('mouseleave', play);
-    carousel.addEventListener('focusin', pause);
-    carousel.addEventListener('focusout', play);
-    viewport.addEventListener('touchstart', () => { pause(); resumeLater(); }, { passive: true });
+    const closeLb = () => {
+      resetZoom();
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lb-open');
+    };
 
-    // Mouse drag-to-scroll
-    let dragging = false;
-    let dragStartX = 0;
-    let dragStartScroll = 0;
-    let dragMoved = false;
-
-    viewport.addEventListener('pointerdown', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      dragging = true;
-      dragMoved = false;
-      dragStartX = e.clientX;
-      dragStartScroll = viewport.scrollLeft;
-      viewport.classList.add('is-dragging');
-      viewport.setPointerCapture?.(e.pointerId);
-      pause();
+    document.querySelectorAll('[data-product]').forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img');
+        if (!img) return;
+        const title = card.querySelector('.produto__title')?.textContent.trim();
+        openLb(img.src, img.alt, title);
+      });
     });
 
-    viewport.addEventListener('pointermove', (e) => {
-      if (!dragging) return;
-      const dx = e.clientX - dragStartX;
-      if (Math.abs(dx) > 8) dragMoved = true;
-      viewport.scrollLeft = dragStartScroll - dx;
+    lbImg.addEventListener('click', (e) => {
+      e.stopPropagation();
+      zoomed = !zoomed;
+      if (zoomed) {
+        setOrigin(e);
+        lbImg.classList.add('is-zoomed');
+      } else {
+        resetZoom();
+      }
     });
 
-    const endDrag = (e) => {
-      if (!dragging) return;
-      dragging = false;
-      viewport.classList.remove('is-dragging');
-      if (e?.pointerId != null) viewport.releasePointerCapture?.(e.pointerId);
-      const step = slideStep() || 1;
-      const targetIdx = Math.round(viewport.scrollLeft / step);
-      viewport.scrollTo({ left: targetIdx * step, behavior: 'smooth' });
-      resumeLater();
-    };
+    lbImg.addEventListener('mousemove', (e) => {
+      if (zoomed) setOrigin(e);
+    });
 
-    viewport.addEventListener('pointerup', endDrag);
-    viewport.addEventListener('pointercancel', endDrag);
-    viewport.addEventListener('pointerleave', endDrag);
-    viewport.addEventListener('click', (e) => {
-      if (dragMoved) { e.preventDefault(); e.stopPropagation(); }
-    }, true);
-
-    // Pause when off-screen
-    if ('IntersectionObserver' in window) {
-      const seen = new IntersectionObserver((entries) => {
-        entries.forEach(e => { e.isIntersecting ? play() : pause(); });
-      }, { threshold: 0.2 });
-      seen.observe(carousel);
-    } else {
-      play();
-    }
-
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox) {
-      const lbImg = lightbox.querySelector('.lightbox__img');
-      const lbCap = lightbox.querySelector('.lightbox__caption');
-      let zoomed = false;
-
-      const setOrigin = (e) => {
-        const rect = lbImg.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        lbImg.style.transformOrigin = `${Math.max(0, Math.min(100, x))}% ${Math.max(0, Math.min(100, y))}%`;
-      };
-
-      const resetZoom = () => {
-        zoomed = false;
-        lbImg.classList.remove('is-zoomed');
-        lbImg.style.transformOrigin = '';
-      };
-
-      const openLb = (src, alt, caption) => {
-        lbImg.src = src;
-        lbImg.alt = alt || '';
-        lbCap.textContent = caption || '';
-        resetZoom();
-        lightbox.classList.add('is-open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('lb-open');
-        pause();
-      };
-
-      const closeLb = () => {
-        resetZoom();
-        lightbox.classList.remove('is-open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('lb-open');
-        play();
-      };
-
-      slides.forEach(slide => {
-        slide.style.cursor = 'zoom-in';
-        slide.addEventListener('click', () => {
-          if (dragMoved) return;
-          const img = slide.querySelector('img');
-          if (!img) return;
-          const title = slide.querySelector('.carousel__title')?.textContent.trim();
-          openLb(img.src, img.alt, title);
-        });
-      });
-
-      lbImg.addEventListener('click', (e) => {
-        e.stopPropagation();
-        zoomed = !zoomed;
-        if (zoomed) {
-          setOrigin(e);
-          lbImg.classList.add('is-zoomed');
-        } else {
-          resetZoom();
-        }
-      });
-
-      lbImg.addEventListener('mousemove', (e) => {
-        if (zoomed) setOrigin(e);
-      });
-
-      lightbox.addEventListener('click', (e) => {
-        if (e.target !== lbImg) closeLb();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLb();
-      });
-    }
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lbImg) closeLb();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLb();
+    });
   }
 
   // Form modal
