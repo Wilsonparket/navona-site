@@ -1118,10 +1118,12 @@ body.lb-open { overflow: hidden; }
 @media (max-width: 860px) {
   .nav__cta { display: none; }
   .nav__toggle { display: block; }
+  .nav { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
   .nav__brand img { height: 24px; max-width: 50vw; object-fit: contain; }
   .nav.is-scrolled .nav__brand img { height: 20px; }
 
-  .nav__links {
+  .nav__links { display: none; }
+  .nav__links.is-open {
     display: flex;
     position: fixed;
     inset: 0;
@@ -1135,21 +1137,9 @@ body.lb-open { overflow: hidden; }
     justify-content: center;
     gap: 28px;
     padding: 0 var(--gutter);
-    z-index: 90;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-12px);
-    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), visibility 0s linear 0.4s;
+    z-index: 110;
   }
-  .nav__links.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), visibility 0s linear 0s;
-  }
-  .nav__links a {
+  .nav__links.is-open a {
     font-family: var(--display);
     font-size: 38px;
     font-weight: 400;
@@ -1157,5 +1147,5 @@ body.lb-open { overflow: hidden; }
     letter-spacing: -0.005em;
     opacity: 1;
   }
-  .nav__links a::after { display: none; }
+  .nav__links.is-open a::after { display: none; }
 }
