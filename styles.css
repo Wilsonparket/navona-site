@@ -265,25 +265,13 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 }
 
 /* ─────────────────────────────────────────
-   CTA DIVIDER (hairline + button center)
+   CTA DIVIDER (button only)
    ───────────────────────────────────────── */
 .cta {
   background: var(--black);
-  padding: clamp(48px, 6vw, 80px) var(--gutter);
-  position: relative;
-}
-.cta::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: var(--gutter);
-  right: var(--gutter);
-  height: 1px;
-  background: var(--line);
-  pointer-events: none;
+  padding: clamp(60px, 7vw, 90px) var(--gutter);
 }
 .cta__inner {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,9 +286,9 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--cream);
-  background: var(--black);
+  background: transparent;
   border: 1px solid var(--cream-soft);
-  padding: 16px 32px;
+  padding: 18px 38px;
   cursor: pointer;
   transition: background 0.4s var(--ease), color 0.4s var(--ease), border-color 0.4s var(--ease);
 }
@@ -316,7 +304,6 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 .manifesto {
   background: var(--black);
   padding: var(--section) 0;
-  border-top: 1px solid var(--line);
 }
 .manifesto__inner {
   display: flex;
