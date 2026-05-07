@@ -375,6 +375,20 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 }
 
 .origem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/fotos/coliseu.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(0.85) contrast(1.05);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.origem::after {
   content: 'TIVOLI';
   position: absolute;
   top: -40px;
@@ -383,13 +397,14 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   font-style: italic;
   font-weight: 300;
   font-size: clamp(140px, 22vw, 320px);
-  color: rgba(231, 224, 213, 0.04);
+  color: rgba(231, 224, 213, 0.05);
   pointer-events: none;
   line-height: 0.9;
   letter-spacing: -0.02em;
+  z-index: 1;
 }
 
-.origem__inner { position: relative; z-index: 1; }
+.origem__inner { position: relative; z-index: 2; }
 .origem__head { max-width: 1100px; }
 .origem__head .display { margin-bottom: clamp(60px, 8vw, 100px); }
 
@@ -414,8 +429,11 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 }
 
 .origem__strip {
+  position: relative;
+  z-index: 2;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  background: var(--charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
