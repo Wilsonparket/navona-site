@@ -120,7 +120,7 @@
   // Form modal
   const formModal = document.getElementById('formModal');
   if (formModal) {
-    const openBtn = document.querySelector('[data-open-form]');
+    const openBtns = document.querySelectorAll('[data-open-form]');
     const closeBtn = formModal.querySelector('.form-modal__close');
     const panel = formModal.querySelector('.form-modal__panel');
     const orcForm = formModal.querySelector('[data-orcamento]');
@@ -132,14 +132,20 @@
       const first = panel.querySelector('input, textarea');
       setTimeout(() => first?.focus(), 350);
     };
+    let lastTrigger = null;
     const closeModal = () => {
       formModal.classList.remove('is-open');
       formModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('fm-open');
-      openBtn?.focus();
+      lastTrigger?.focus();
     };
 
-    openBtn?.addEventListener('click', openModal);
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        lastTrigger = btn;
+        openModal();
+      });
+    });
     closeBtn?.addEventListener('click', closeModal);
     formModal.addEventListener('click', (e) => {
       if (e.target === formModal) closeModal();

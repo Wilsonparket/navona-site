@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=16" />
+<link rel="stylesheet" href="styles.css?v=17" />
 </head>
 <body>
 
@@ -20,9 +20,9 @@
     <img src="assets/logo-branco.png" alt="NAVONA" />
   </a>
   <nav class="nav__links" aria-label="Navegação principal">
-    <a href="#material">Material</a>
+    <a href="#projetos">Produtos</a>
     <a href="#origem">Origem</a>
-    <a href="#projetos">Projetos</a>
+    <a href="#material">Material</a>
     <a href="#contato">Contato</a>
   </nav>
   <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
@@ -39,6 +39,14 @@
 
   <div class="hero__content">
     <h1 class="hero__title">A pedra <em>que atravessa séculos</em></h1>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta">
+  <div class="container cta__inner">
+    <span class="cta__tag">Cada projeto começa com uma conversa</span>
+    <button type="button" class="cta__btn" data-open-form>Solicitar orçamento</button>
   </div>
 </section>
 
@@ -65,83 +73,6 @@
         que a arquitetura contemporânea exige.
       </p>
     </div>
-  </div>
-</section>
-
-<!-- ─── MATERIAL ─── -->
-<section class="material" id="material">
-  <div class="material__media">
-    <img src="assets/fotos/Travertino-Romano-Bruto-scaled.jpg" alt="Travertino Romano em estado bruto" loading="lazy" />
-  </div>
-  <div class="material__text">
-    <span class="eyebrow eyebrow--dark">O Material</span>
-    <h2 class="display display--md">Travertino Romano.</h2>
-    <p class="body">
-      Formado em fontes termais a céu aberto na região de Tivoli, o travertino
-      romano é uma rocha calcária sedimentar de formação milenar. Tons
-      amanteigados, cavidades naturais e camadas estratificadas conservam o
-      registro do tempo geológico que o produziu.
-    </p>
-
-    <dl class="specs">
-      <div class="specs__row">
-        <dt>Origem</dt>
-        <dd>Tivoli — Lazio, Itália</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Densidade</dt>
-        <dd>2,4 — 2,5 g/cm³</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Absorção</dt>
-        <dd>Inferior a 5%</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Acabamentos</dt>
-        <dd>Bruto · Escovado · Polido · Raspado</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Formatos</dt>
-        <dd>Placas, chapas, mosaicos e peças sob medida</dd>
-      </div>
-    </dl>
-  </div>
-</section>
-
-<!-- ─── ORIGEM ─── -->
-<section class="origem" id="origem">
-  <div class="container origem__inner">
-    <div class="origem__head">
-      <span class="eyebrow">A Origem</span>
-      <h2 class="display display--lg">
-        Tivoli, <em>onde a pedra</em><br>aprendeu a durar.
-      </h2>
-    </div>
-
-    <div class="origem__grid">
-      <p class="body">
-        As pedreiras de Tivoli, ao norte de Roma, abasteceram o Coliseu,
-        a Basílica de São Pedro e a Fontana di Trevi. Permanecem em
-        operação há mais de dois milênios. Toda peça que chega ao Brasil
-        pela NAVONA traz consigo essa linhagem — não como referência
-        decorativa, mas como matéria de origem rastreável.
-      </p>
-      <figure class="origem__quote">
-        <blockquote>
-          <span class="display display--quote">
-            “Marmor durat. Travertinum durat amplius.”
-          </span>
-        </blockquote>
-        <figcaption>O mármore dura muito. O travertino dura ainda mais.</figcaption>
-      </figure>
-    </div>
-  </div>
-
-  <div class="origem__strip">
-    <span>Tivoli</span><i></i>
-    <span>Roma</span><i></i>
-    <span>Lazio</span><i></i>
-    <span>Itália</span>
   </div>
 </section>
 
@@ -220,6 +151,83 @@
         <span class="produto__cta">Ver detalhes</span>
       </div>
     </article>
+  </div>
+</section>
+
+<!-- ─── ORIGEM ─── -->
+<section class="origem" id="origem">
+  <div class="container origem__inner">
+    <div class="origem__head">
+      <span class="eyebrow">A Origem</span>
+      <h2 class="display display--lg">
+        Tivoli, <em>onde a pedra</em><br>aprendeu a durar.
+      </h2>
+    </div>
+
+    <div class="origem__grid">
+      <p class="body">
+        As pedreiras de Tivoli, ao norte de Roma, abasteceram o Coliseu,
+        a Basílica de São Pedro e a Fontana di Trevi. Permanecem em
+        operação há mais de dois milênios. Toda peça que chega ao Brasil
+        pela NAVONA traz consigo essa linhagem — não como referência
+        decorativa, mas como matéria de origem rastreável.
+      </p>
+      <figure class="origem__quote">
+        <blockquote>
+          <span class="display display--quote">
+            “Marmor durat. Travertinum durat amplius.”
+          </span>
+        </blockquote>
+        <figcaption>O mármore dura muito. O travertino dura ainda mais.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="origem__strip">
+    <span>Tivoli</span><i></i>
+    <span>Roma</span><i></i>
+    <span>Lazio</span><i></i>
+    <span>Itália</span>
+  </div>
+</section>
+
+<!-- ─── MATERIAL ─── -->
+<section class="material" id="material">
+  <div class="material__media">
+    <img src="assets/fotos/Travertino-Romano-Bruto-scaled.jpg" alt="Travertino Romano em estado bruto" loading="lazy" />
+  </div>
+  <div class="material__text">
+    <span class="eyebrow eyebrow--dark">O Material</span>
+    <h2 class="display display--md">Travertino Romano.</h2>
+    <p class="body">
+      Formado em fontes termais a céu aberto na região de Tivoli, o travertino
+      romano é uma rocha calcária sedimentar de formação milenar. Tons
+      amanteigados, cavidades naturais e camadas estratificadas conservam o
+      registro do tempo geológico que o produziu.
+    </p>
+
+    <dl class="specs">
+      <div class="specs__row">
+        <dt>Origem</dt>
+        <dd>Tivoli — Lazio, Itália</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Densidade</dt>
+        <dd>2,4 — 2,5 g/cm³</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Absorção</dt>
+        <dd>Inferior a 5%</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Acabamentos</dt>
+        <dd>Bruto · Escovado · Polido · Raspado</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Formatos</dt>
+        <dd>Placas, chapas, mosaicos e peças sob medida</dd>
+      </div>
+    </dl>
   </div>
 </section>
 
@@ -309,9 +317,9 @@
       <span>Travertino Romano</span>
     </div>
     <nav class="footer__nav" aria-label="Rodapé">
-      <a href="#material">Material</a>
+      <a href="#projetos">Produtos</a>
       <a href="#origem">Origem</a>
-      <a href="#projetos">Projetos</a>
+      <a href="#material">Material</a>
       <a href="#contato">Contato</a>
     </nav>
     <p class="footer__legal">
@@ -329,6 +337,6 @@
   <p class="lightbox__caption"></p>
 </div>
 
-<script src="script.js?v=12"></script>
+<script src="script.js?v=13"></script>
 </body>
 </html>
