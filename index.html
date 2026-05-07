@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NAVONA — Travertino Romano</title>
+<meta name="description" content="NAVONA seleciona e fornece travertino romano para projetos de arquitetura, extraído das pedreiras de Tivoli, Itália." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=11" />
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__brand" aria-label="NAVONA">
+    <img src="assets/logo-branco.png" alt="NAVONA" />
+  </a>
+  <nav class="nav__links" aria-label="Navegação principal">
+    <a href="#material">Material</a>
+    <a href="#origem">Origem</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="top">
+  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="">
+    <source src="assets/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero__veil"></div>
+
+  <div class="hero__content">
+    <h1 class="hero__title">A pedra <em>que atravessa séculos</em></h1>
+  </div>
+</section>
+
+<!-- ─── MANIFESTO ─── -->
+<section class="manifesto">
+  <div class="container manifesto__inner">
+    <span class="eyebrow">A Marca</span>
+    <h2 class="display display--lg">
+      Matéria que se <em>reinventa</em>,<br>ciclo após ciclo.
+    </h2>
+    <div class="manifesto__body">
+      <p class="lede">
+        Travertino Romano é o material mais procurado da temporada, um
+        composto desenvolvido em processo tecnológico avançado que reúne
+        fibras naturais (serragem que seria descartada) e polímeros
+        reciclados de alta resistência.
+      </p>
+      <p class="lede">
+        Comprometida com a economia circular, a NAVONA transforma
+        resíduo industrial em superfície. Reduz o descarte em aterros,
+        alivia a pressão sobre florestas nativas e entrega uma
+        alternativa de alto desempenho, em texturas e cores que
+        reproduzem com fidelidade a madeira natural, com a funcionalidade
+        que a arquitetura contemporânea exige.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MATERIAL ─── -->
+<section class="material" id="material">
+  <div class="material__media">
+    <img src="assets/fotos/Travertino-Romano-Bruto-scaled.jpg" alt="Travertino Romano em estado bruto" loading="lazy" />
+  </div>
+  <div class="material__text">
+    <span class="eyebrow eyebrow--dark">O Material</span>
+    <h2 class="display display--md">Travertino Romano.</h2>
+    <p class="body">
+      Formado em fontes termais a céu aberto na região de Tivoli, o travertino
+      romano é uma rocha calcária sedimentar de formação milenar. Tons
+      amanteigados, cavidades naturais e camadas estratificadas conservam o
+      registro do tempo geológico que o produziu.
+    </p>
+
+    <dl class="specs">
+      <div class="specs__row">
+        <dt>Origem</dt>
+        <dd>Tivoli — Lazio, Itália</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Densidade</dt>
+        <dd>2,4 — 2,5 g/cm³</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Absorção</dt>
+        <dd>Inferior a 5%</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Acabamentos</dt>
+        <dd>Bruto · Escovado · Polido · Raspado</dd>
+      </div>
+      <div class="specs__row">
+        <dt>Formatos</dt>
+        <dd>Placas, chapas, mosaicos e peças sob medida</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ─── ORIGEM ─── -->
+<section class="origem" id="origem">
+  <div class="container origem__inner">
+    <div class="origem__head">
+      <span class="eyebrow">A Origem</span>
+      <h2 class="display display--lg">
+        Tivoli, <em>onde a pedra</em><br>aprendeu a durar.
+      </h2>
+    </div>
+
+    <div class="origem__grid">
+      <p class="body">
+        As pedreiras de Tivoli, ao norte de Roma, abasteceram o Coliseu,
+        a Basílica de São Pedro e a Fontana di Trevi. Permanecem em
+        operação há mais de dois milênios. Toda peça que chega ao Brasil
+        pela NAVONA traz consigo essa linhagem — não como referência
+        decorativa, mas como matéria de origem rastreável.
+      </p>
+      <figure class="origem__quote">
+        <blockquote>
+          <span class="display display--quote">
+            “Marmor durat. Travertinum durat amplius.”
+          </span>
+        </blockquote>
+        <figcaption>Inscrição anônima, pedreiras de Bagni di Tivoli</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="origem__strip">
+    <span>Tivoli</span><i></i>
+    <span>Roma</span><i></i>
+    <span>Lazio</span><i></i>
+    <span>Itália</span>
+  </div>
+</section>
+
+<!-- ─── PROJETOS / CARROSSEL ─── -->
+<section class="projetos" id="projetos">
+  <div class="container projetos__head">
+    <span class="eyebrow">Projetos</span>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel__viewport" data-viewport>
+      <figure class="carousel__slide">
+        <div class="carousel__media"><img src="assets/fotos/Novayork063-scaled-2560x1751.jpg" alt="Residencial" loading="lazy" /></div>
+        <figcaption class="carousel__cap">
+          <span class="carousel__num">01</span>
+          <span class="carousel__title">Residencial</span>
+        </figcaption>
+      </figure>
+      <figure class="carousel__slide">
+        <div class="carousel__media"><img src="assets/fotos/27-loft-rlo-me-arquitetura-brazil-d518188f67b5a2807117071389545410-1024-1024.jpg" alt="Área externa" loading="lazy" /></div>
+        <figcaption class="carousel__cap">
+          <span class="carousel__num">02</span>
+          <span class="carousel__title">Área externa</span>
+        </figcaption>
+      </figure>
+      <figure class="carousel__slide">
+        <div class="carousel__media"><img src="assets/fotos/ambiente-diversos-benderarquitetura-travertino-romano-bruto-rosso-verona-marrom-emperador-light-onix-caramelo-5-scaled.jpg" alt="Ambiente integrado" loading="lazy" /></div>
+        <figcaption class="carousel__cap">
+          <span class="carousel__num">03</span>
+          <span class="carousel__title">Ambiente integrado</span>
+        </figcaption>
+      </figure>
+      <figure class="carousel__slide">
+        <div class="carousel__media"><img src="assets/fotos/SaveClip.App_540434153_866392795889022_3100417139165842964_n.jpg" alt="Parede contínua" loading="lazy" /></div>
+        <figcaption class="carousel__cap">
+          <span class="carousel__num">04</span>
+          <span class="carousel__title">Parede contínua</span>
+        </figcaption>
+      </figure>
+      <figure class="carousel__slide">
+        <div class="carousel__media"><img src="assets/fotos/SaveClip.App_420127885_734538685283608_3200884001138134123_n.jpg" alt="Interior" loading="lazy" /></div>
+        <figcaption class="carousel__cap">
+          <span class="carousel__num">05</span>
+          <span class="carousel__title">Interior</span>
+        </figcaption>
+      </figure>
+      <figure class="carousel__slide">
+        <div class="carousel__media"><img src="assets/fotos/SaveClip.App_420162263_1082008159914691_7068982760293327936_n.jpg" alt="Interior" loading="lazy" /></div>
+        <figcaption class="carousel__cap">
+          <span class="carousel__num">06</span>
+          <span class="carousel__title">Interior</span>
+        </figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CONTATO ─── -->
+<section class="contato" id="contato">
+  <div class="container contato__inner">
+
+    <div class="contato__main">
+      <span class="eyebrow">Contato</span>
+      <h2 class="contato__title">Vamos conversar<br>sobre o seu projeto.</h2>
+      <p class="contato__lede">
+        Nossa equipe técnica está pronta para entender as necessidades
+        do seu projeto e recomendar a melhor solução em travertino romano.
+      </p>
+      <button type="button" class="contato__btn" data-open-form>Solicitar orçamento</button>
+    </div>
+
+    <aside class="contato__side">
+      <div class="contato__block">
+        <span class="eyebrow">Escritório</span>
+        <h3 class="contato__office">São Paulo</h3>
+        <address class="contato__address">
+          Avenida Magalhães de Castro, 4800<br>
+          Torre 1, Edifício Capital · Cj. 201<br>
+          Jardim Panorama — São Paulo, SP
+        </address>
+      </div>
+
+      <hr class="contato__hr" />
+
+      <div class="contato__block">
+        <span class="eyebrow">Contato geral</span>
+        <ul class="contato__list">
+          <li><a href="mailto:contato@navona.com.br">contato@navona.com.br</a></li>
+          <li><a href="https://wa.me/5511999600222" target="_blank" rel="noopener">+55 11 99960-0222</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="contato__newsletter">
+      <span class="eyebrow">Newsletter</span>
+      <p class="contato__nl-cap">Receba novidades sobre projetos e seleções de travertino.</p>
+      <form class="contato__nl-form" data-newsletter novalidate>
+        <input type="email" placeholder="seu@email.com" required aria-label="Seu e-mail" />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── MODAL FORMULÁRIO ─── -->
+<div class="form-modal" id="formModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Solicitar orçamento">
+  <div class="form-modal__panel" role="document">
+    <button class="form-modal__close" type="button" aria-label="Fechar">Fechar</button>
+    <span class="eyebrow">Solicitar orçamento</span>
+    <h3 class="form-modal__title">Conte-nos sobre <em>o projeto.</em></h3>
+    <form class="form-modal__form" data-orcamento>
+      <label class="field">
+        <span>Nome</span>
+        <input type="text" name="nome" required autocomplete="name" />
+      </label>
+      <label class="field">
+        <span>E-mail</span>
+        <input type="email" name="email" required autocomplete="email" />
+      </label>
+      <label class="field">
+        <span>Telefone</span>
+        <input type="tel" name="telefone" autocomplete="tel" />
+      </label>
+      <label class="field field--full">
+        <span>Sobre o projeto</span>
+        <textarea name="mensagem" rows="4" required></textarea>
+      </label>
+      <div class="form-modal__actions">
+        <button type="submit" class="form-modal__submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo-branco.png" alt="NAVONA" />
+      <span>Travertino Romano</span>
+    </div>
+    <nav class="footer__nav" aria-label="Rodapé">
+      <a href="#material">Material</a>
+      <a href="#origem">Origem</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <p class="footer__legal">
+      © <span id="year">2026</span> NAVONA · Todos os direitos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- ─── LIGHTBOX ─── -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visualizador de projeto">
+  <button class="lightbox__close" type="button" aria-label="Fechar">Fechar</button>
+  <div class="lightbox__stage">
+    <img class="lightbox__img" alt="" />
+  </div>
+  <p class="lightbox__caption"></p>
+</div>
+
+<script src="script.js?v=11"></script>
+</body>
+</html>
