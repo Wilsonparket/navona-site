@@ -308,24 +308,56 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
 }
 .manifesto__inner {
   display: grid;
-  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
   gap: clamp(40px, 6vw, 96px);
   align-items: start;
 }
-.manifesto__head { display: flex; flex-direction: column; }
-.manifesto__head .eyebrow { align-self: flex-start; margin-bottom: clamp(28px, 3vw, 40px); }
-.manifesto__head .display { margin: 0; text-align: left; }
+.manifesto__main { display: flex; flex-direction: column; }
+.manifesto__main .eyebrow { align-self: flex-start; margin-bottom: clamp(28px, 3vw, 40px); }
+.manifesto__main .display { margin: 0 0 clamp(40px, 4vw, 56px); text-align: left; }
 .manifesto__body {
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 2vw, 28px);
   text-align: left;
-  margin-top: calc(11px + 5px + clamp(28px, 3vw, 40px));
 }
 .manifesto__body .lede { max-width: none; text-align: left; }
+
+.manifesto__stats {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 3vw, 44px);
+  margin-top: calc(11px + 5px + clamp(28px, 3vw, 40px));
+  padding-left: clamp(20px, 2vw, 32px);
+  border-left: 1px solid var(--line);
+}
+.manifesto__stat { display: flex; flex-direction: column; gap: 10px; }
+.manifesto__stat-num {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.manifesto__stat-label {
+  font-family: var(--body);
+  font-weight: 300;
+  font-size: clamp(13px, 0.95vw, 15px);
+  line-height: 1.5;
+  color: var(--cream-dim);
+  max-width: 28ch;
+}
+
 @media (max-width: 860px) {
   .manifesto__inner { grid-template-columns: 1fr; }
-  .manifesto__body { margin-top: 0; }
+  .manifesto__stats {
+    margin-top: clamp(40px, 5vw, 64px);
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: clamp(32px, 4vw, 48px);
+  }
 }
 
 /* ─────────────────────────────────────────
