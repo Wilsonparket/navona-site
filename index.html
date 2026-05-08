@@ -11,6 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css?v=19" />
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -52,24 +54,25 @@
 <!-- ─── MANIFESTO ─── -->
 <section class="manifesto">
   <div class="container manifesto__inner">
-    <span class="eyebrow">A Marca</span>
-    <h2 class="display display--lg">
-      Matéria que se <em>reinventa</em>,<br>ciclo após ciclo.
-    </h2>
+    <div class="manifesto__head">
+      <span class="eyebrow">A Marca</span>
+      <h2 class="display display--lg" style="font-size: 53.406px;">
+        Navona, especializada<br>exclusivamente em<br>Travertino Romano.
+      </h2>
+    </div>
     <div class="manifesto__body">
       <p class="lede">
-        Travertino Romano é o material mais procurado da temporada, um
-        composto desenvolvido em processo tecnológico avançado que reúne
-        fibras naturais (serragem que seria descartada) e polímeros
-        reciclados de alta resistência.
+        A Navona é especializada exclusivamente em Travertino Romano,
+        uma pedra natural reconhecida por sua beleza atemporal, textura
+        marcante e elegância natural. Inspirada na tradição da arquitetura
+        italiana, a marca oferece materiais selecionados que valorizam
+        ambientes com autenticidade, sofisticação e personalidade.
       </p>
       <p class="lede">
-        Comprometida com a economia circular, a NAVONA transforma
-        resíduo industrial em superfície. Reduz o descarte em aterros,
-        alivia a pressão sobre florestas nativas e entrega uma
-        alternativa de alto desempenho, em texturas e cores que
-        reproduzem com fidelidade a madeira natural, com a funcionalidade
-        que a arquitetura contemporânea exige.
+        Cada peça é escolhida pela leitura da pedra e pela aderência ao
+        projeto. Não trabalhamos com coleções prontas, operamos caso a
+        caso, com curadoria direta da pedreira de Tivoli ao destino final,
+        garantindo procedência e singularidade em cada aplicação.
       </p>
     </div>
   </div>
@@ -87,7 +90,7 @@
   <div class="container produtos" id="produtos">
     <article class="produto" data-product>
       <div class="produto__media">
-        <img src="assets/fotos/SaveClip.App_540434153_866392795889022_3100417139165842964_n.jpg" alt="Piso em travertino romano" loading="lazy" />
+        <img src="assets/fotos/SaveClip.App_420162263_1082008159914691_7068982760293327936_n.jpg" alt="Piso em travertino romano" loading="lazy" />
       </div>
       <div class="produto__info">
         <h3 class="produto__title">Piso</h3>
@@ -98,18 +101,18 @@
 
     <article class="produto" data-product>
       <div class="produto__media">
-        <img src="assets/fotos/SaveClip.App_420127885_734538685283608_3200884001138134123_n.jpg" alt="Revestimento em travertino" loading="lazy" />
+        <img src="assets/fotos/ESCADAS.jpg" alt="Escada com revestimento em travertino" loading="lazy" style="object-position: 0% center;" />
       </div>
       <div class="produto__info">
-        <h3 class="produto__title">Revestimento</h3>
+        <h3 class="produto__title">Escadas</h3>
         <p class="produto__sub">Paredes contínuas e painéis com juntas trabalhadas</p>
         <span class="produto__cta">Ver detalhes</span>
       </div>
     </article>
 
-    <article class="produto" data-product>
+    <article class="produto produto--zoom-forro" data-product>
       <div class="produto__media">
-        <img src="assets/fotos/Novayork063-scaled-2560x1751.jpg" alt="Forro em travertino" loading="lazy" />
+        <img src="assets/fotos/FORRO.png" alt="Forro em travertino" loading="lazy" />
       </div>
       <div class="produto__info">
         <h3 class="produto__title">Forro</h3>
@@ -120,7 +123,7 @@
 
     <article class="produto" data-product>
       <div class="produto__media">
-        <img src="assets/fotos/27-loft-rlo-me-arquitetura-brazil-d518188f67b5a2807117071389545410-1024-1024.jpg" alt="Revestimento de porta em travertino" loading="lazy" />
+        <img src="assets/fotos/REVESTIMENTO%20DE%20PORTA.JPG" alt="Revestimento de porta em travertino" loading="lazy" style="object-position: 30% center;" />
       </div>
       <div class="produto__info">
         <h3 class="produto__title">Revestimento de porta</h3>
@@ -131,7 +134,7 @@
 
     <article class="produto" data-product>
       <div class="produto__media">
-        <img src="assets/fotos/ambiente-diversos-benderarquitetura-travertino-romano-bruto-rosso-verona-marrom-emperador-light-onix-caramelo-5-scaled.jpg" alt="Móveis personalizados em travertino" loading="lazy" />
+        <img src="assets/fotos/ambiente-diversos-benderarquitetura-travertino-romano-bruto-rosso-verona-marrom-emperador-light-onix-caramelo-5-scaled.jpg" alt="Móveis personalizados em travertino" loading="lazy" style="object-position: 85% center;" />
       </div>
       <div class="produto__info">
         <h3 class="produto__title">Móveis personalizados</h3>
@@ -142,7 +145,7 @@
 
     <article class="produto" data-product>
       <div class="produto__media">
-        <img src="assets/fotos/SaveClip.App_420162263_1082008159914691_7068982760293327936_n.jpg" alt="Cuba esculpida em travertino" loading="lazy" />
+        <img src="assets/fotos/CUBA%20ESCULPIDA.png" alt="Cuba esculpida em travertino" loading="lazy" />
       </div>
       <div class="produto__info">
         <h3 class="produto__title">Cuba esculpida</h3>
@@ -156,14 +159,11 @@
 <!-- ─── ORIGEM ─── -->
 <section class="origem" id="origem">
   <div class="container origem__inner">
-    <div class="origem__head">
+    <div class="origem__main">
       <span class="eyebrow">A Origem</span>
       <h2 class="display display--lg">
         Tivoli, <em>onde a pedra</em><br>aprendeu a durar.
       </h2>
-    </div>
-
-    <div class="origem__grid">
       <p class="body">
         As pedreiras de Tivoli, ao norte de Roma, abasteceram o Coliseu,
         a Basílica de São Pedro e a Fontana di Trevi. Permanecem em
@@ -171,15 +171,16 @@
         pela NAVONA traz consigo essa linhagem — não como referência
         decorativa, mas como matéria de origem rastreável.
       </p>
-      <figure class="origem__quote">
-        <blockquote>
-          <span class="display display--quote">
-            “Marmor durat. Travertinum durat amplius.”
-          </span>
-        </blockquote>
-        <figcaption>O mármore dura muito. O travertino dura ainda mais.</figcaption>
-      </figure>
     </div>
+
+    <figure class="origem__quote">
+      <blockquote>
+        <span class="display display--quote">
+          “Marmor durat. Travertinum durat amplius.”
+        </span>
+      </blockquote>
+      <figcaption>O mármore dura muito. O travertino dura ainda mais.</figcaption>
+    </figure>
   </div>
 
   <div class="origem__strip">
@@ -193,10 +194,23 @@
 <!-- ─── MATERIAL ─── -->
 <section class="material" id="material">
   <div class="material__media">
-    <img src="assets/fotos/Travertino-Romano-Bruto-scaled.jpg" alt="Travertino Romano em estado bruto" loading="lazy" />
+    <model-viewer
+      class="material__model"
+      src="assets/3d/peca.glb"
+      alt="Peça em travertino romano"
+      camera-controls
+      auto-rotate
+      auto-rotate-delay="0"
+      rotation-per-second="6deg"
+      shadow-intensity="1"
+      exposure="1"
+      interaction-prompt="none"
+      loading="lazy"
+      reveal="auto">
+    </model-viewer>
   </div>
   <div class="material__text">
-    <span class="eyebrow eyebrow--dark">O Material</span>
+    <span class="eyebrow eyebrow--dark">Explore o material</span>
     <h2 class="display display--md">Travertino Romano.</h2>
     <p class="body">
       Formado em fontes termais a céu aberto na região de Tivoli, o travertino
@@ -296,10 +310,6 @@
       <label class="field">
         <span>Telefone</span>
         <input type="tel" name="telefone" autocomplete="tel" />
-      </label>
-      <label class="field field--full">
-        <span>Sobre o projeto</span>
-        <textarea name="mensagem" rows="4" required></textarea>
       </label>
       <div class="form-modal__actions">
         <button type="submit" class="form-modal__submit">Enviar</button>
