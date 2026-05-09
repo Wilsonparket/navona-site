@@ -30,9 +30,13 @@
 
   // Reveal on scroll
   const targets = document.querySelectorAll(
-    '.manifesto__inner, .material__text, .material__media, .origem__head, .origem__grid, .projetos__head, .produto, .contato__inner'
+    '.manifesto__inner, .material__text, .material__media, .origem__main, .origem__quote, .projetos__head, .produto, .contato__inner'
   );
   targets.forEach(el => el.classList.add('reveal'));
+
+  document.querySelectorAll('.produto').forEach((el, i) => {
+    el.style.setProperty('--reveal-index', i % 3);
+  });
 
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -46,6 +50,53 @@
     targets.forEach(el => io.observe(el));
   } else {
     targets.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // Back-to-top button
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    const toggle = () => {
+      if (window.scrollY > 600) backToTop.classList.add('is-visible');
+      else backToTop.classList.remove('is-visible');
+    };
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Active nav link based on scroll position
+  const sections = ['#projetos', '#origem', '#material', '#contato']
+    .map(sel => document.querySelector(sel))
+    .filter(Boolean);
+  const navLinkMap = new Map();
+  document.querySelectorAll('.nav__links a').forEach(a => {
+    const id = a.getAttribute('href');
+    if (id?.startsWith('#')) navLinkMap.set(id.slice(1), a);
+  });
+  if (sections.length && navLinkMap.size && 'IntersectionObserver' in window) {
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = navLinkMap.get(entry.target.id);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinkMap.forEach(l => l.classList.remove('is-active'));
+          link.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    sections.forEach(s => navIO.observe(s));
+  }
+
+  // 3D model progress bar
+  const modelViewer = document.querySelector('.material__model');
+  const progressBar = document.querySelector('.model-progress__bar');
+  if (modelViewer && progressBar) {
+    modelViewer.addEventListener('progress', (e) => {
+      const ratio = e.detail.totalProgress;
+      progressBar.style.width = (ratio * 100) + '%';
+    });
   }
 
   // Lightbox + Produtos

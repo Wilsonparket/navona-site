@@ -1,3 +1,5 @@
 .DS_Store
 *.log
 assets/3d/*-v1.glb
+assets/3d/*-original.glb
+assets/hero-original.mp4
