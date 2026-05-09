@@ -220,20 +220,7 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   filter: saturate(0.92) contrast(1.02);
 }
 
-.hero__fallback {
-  display: none;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  filter: saturate(0.92) contrast(1.02);
-}
-@media (max-width: 768px) {
-  .hero__video { display: none; }
-  .hero__fallback { display: block; }
-}
+.hero__fallback { display: none; }
 
 .hero__veil {
   position: absolute;
