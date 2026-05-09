@@ -1,4 +1,24 @@
 (() => {
+  // Hero video: force iOS-friendly autoplay; if it fails, show static poster
+  const heroVideo = document.querySelector('.hero__video');
+  const heroSection = document.querySelector('.hero');
+  if (heroVideo && heroSection) {
+    heroVideo.muted = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.playsInline = true;
+    const tryPlay = () => {
+      const p = heroVideo.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          heroSection.classList.add('video-failed');
+        });
+      }
+    };
+    if (heroVideo.readyState >= 2) tryPlay();
+    else heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
+    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+  }
+
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.querySelector('.nav__links');
