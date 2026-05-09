@@ -89,16 +89,6 @@
     sections.forEach(s => navIO.observe(s));
   }
 
-  // 3D model progress bar
-  const modelViewer = document.querySelector('.material__model');
-  const progressBar = document.querySelector('.model-progress__bar');
-  if (modelViewer && progressBar) {
-    modelViewer.addEventListener('progress', (e) => {
-      const ratio = e.detail.totalProgress;
-      progressBar.style.width = (ratio * 100) + '%';
-    });
-  }
-
   // Lightbox + Produtos
   const lightbox = document.getElementById('lightbox');
   if (lightbox) {

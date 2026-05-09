@@ -1317,19 +1317,6 @@ body.lb-open { overflow: hidden; }
   text-transform: uppercase;
 }
 @keyframes model-spin { to { transform: rotate(360deg); } }
-.model-progress {
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 2px;
-  background: rgba(231, 224, 213, 0.12);
-}
-.model-progress__bar {
-  height: 100%;
-  width: 0;
-  background: var(--cream);
-  transition: width 0.2s var(--ease);
-}
-
 /* ─────────────────────────────────────────
    FLOATING CTAS (back-to-top + WhatsApp)
    ───────────────────────────────────────── */
@@ -1345,17 +1332,8 @@ body.lb-open { overflow: hidden; }
   transition: transform 0.4s var(--ease), background 0.4s var(--ease), color 0.4s var(--ease), opacity 0.4s var(--ease), box-shadow 0.4s var(--ease);
   box-shadow: 0 14px 40px -12px rgba(0, 0, 0, 0.55);
 }
-.floating-whatsapp {
-  bottom: clamp(18px, 2.5vw, 28px);
-  width: 56px;
-  height: 56px;
-  background: #25D366;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-.floating-whatsapp:hover { transform: translateY(-2px) scale(1.04); }
 .floating-top {
-  bottom: calc(clamp(18px, 2.5vw, 28px) + 56px + 12px);
+  bottom: clamp(18px, 2.5vw, 28px);
   width: 42px;
   height: 42px;
   background: rgba(0, 0, 0, 0.6);
