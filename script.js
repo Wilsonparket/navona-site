@@ -1,22 +1,25 @@
 (() => {
-  // Hero video: force iOS-friendly autoplay; if it fails, show static poster
+  // Hero video: force iOS-friendly autoplay; fall back to image only after retries fail
   const heroVideo = document.querySelector('.hero__video');
   const heroSection = document.querySelector('.hero');
   if (heroVideo && heroSection) {
     heroVideo.muted = true;
     heroVideo.setAttribute('muted', '');
     heroVideo.playsInline = true;
+    let attempts = 0;
     const tryPlay = () => {
       const p = heroVideo.play();
       if (p && typeof p.catch === 'function') {
         p.catch(() => {
-          heroSection.classList.add('video-failed');
+          attempts++;
+          if (attempts >= 3) heroSection.classList.add('video-failed');
         });
       }
     };
-    if (heroVideo.readyState >= 2) tryPlay();
-    else heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
+    heroVideo.addEventListener('canplay', tryPlay, { once: true });
+    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
     document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    document.addEventListener('click', tryPlay, { once: true });
   }
 
   const nav = document.getElementById('nav');

@@ -1,391 +1,386 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NAVONA — Travertino Romano</title>
-<meta name="description" content="NAVONA seleciona e fornece travertino romano para projetos de arquitetura, extraído das pedreiras de Tivoli, Itália." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAVONA — Travertino Romano</title>
+  <meta name="description"
+    content="NAVONA seleciona e fornece travertino romano para projetos de arquitetura, extraído das pedreiras de Tivoli, Itália." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="stylesheet" href="styles.css?v=29" />
 
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
+
 <body>
 
-<!-- ─── NAV ─── -->
-<header class="nav" id="nav">
-  <a href="#top" class="nav__brand" aria-label="NAVONA">
-    <img src="assets/logo-branco.png" alt="NAVONA" />
-  </a>
-  <nav class="nav__links" aria-label="Navegação principal">
-    <a href="#projetos">Produtos</a>
-    <a href="#origem">Origem</a>
-    <a href="#material">Material</a>
-    <a href="#contato">Contato</a>
-  </nav>
-  <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-    <span></span><span></span>
-  </button>
-</header>
-
-<!-- ─── HERO ─── -->
-<section class="hero" id="top">
-  <video
-    class="hero__video"
-    autoplay
-    muted
-    loop
-    playsinline
-    webkit-playsinline="true"
-    disablepictureinpicture
-    disableremoteplayback
-    preload="auto"
-    poster="assets/fotos/pedreira-hero.webp">
-    <source src="assets/hero.mp4" type="video/mp4" />
-  </video>
-  <img class="hero__fallback" src="assets/fotos/pedreira-hero.webp" alt="Pedreira de travertino em Tivoli" />
-  <div class="hero__veil"></div>
-
-  <div class="hero__content">
-    <h1 class="hero__title">A pedra <em>que atravessa séculos</em></h1>
-  </div>
-</section>
-
-<!-- ─── CTA DIVIDER ─── -->
-<section class="cta" aria-label="Divisor — solicitar orçamento">
-  <div class="cta__inner">
-    <button type="button" class="cta__btn" data-open-form>Solicitar orçamento</button>
-  </div>
-</section>
-
-<!-- ─── MANIFESTO ─── -->
-<section class="manifesto">
-  <div class="container manifesto__inner">
-    <div class="manifesto__main">
-      <span class="eyebrow">A Marca</span>
-      <h2 class="display display--lg" style="font-size: 53.406px;">
-        Navona, especializada<br>exclusivamente em<br>Travertino Romano.
-      </h2>
-      <div class="manifesto__body">
-        <p class="lede">
-          A Navona é especializada exclusivamente em Travertino Romano,
-          uma pedra natural reconhecida por sua beleza atemporal, textura
-          marcante e elegância natural. Inspirada na tradição da arquitetura
-          italiana, a marca oferece materiais selecionados que valorizam
-          ambientes com autenticidade, sofisticação e personalidade.
-        </p>
-        <p class="lede">
-          Cada peça é escolhida pela leitura da pedra e pela aderência ao
-          projeto. Não trabalhamos com coleções prontas, operamos caso a
-          caso, com curadoria direta da pedreira de Tivoli ao destino final,
-          garantindo procedência e singularidade em cada aplicação.
-        </p>
-      </div>
-    </div>
-
-    <dl class="manifesto__stats">
-      <div class="manifesto__stat">
-        <dt class="manifesto__stat-num"><span data-count="100" data-suffix="%">100%</span> Natural</dt>
-        <dd class="manifesto__stat-label">Pedra formada mineralmente.</dd>
-      </div>
-      <div class="manifesto__stat">
-        <dt class="manifesto__stat-num">Projetos exclusivos</dt>
-        <dd class="manifesto__stat-label">Cada aplicação é selecionada e adaptada ao desenho do projeto.</dd>
-      </div>
-      <div class="manifesto__stat">
-        <dt class="manifesto__stat-num">Alta durabilidade</dt>
-        <dd class="manifesto__stat-label">Resistente ao tempo e às intempéries.</dd>
-      </div>
-      <div class="manifesto__stat">
-        <dt class="manifesto__stat-num">Um único material</dt>
-        <dd class="manifesto__stat-label">Infinitas possibilidades.</dd>
-      </div>
-    </dl>
-  </div>
-</section>
-
-<!-- ─── PRODUTOS / GRID ─── -->
-<section class="projetos" id="projetos">
-  <div class="container projetos__head">
-    <span class="eyebrow">Produtos</span>
-    <h2 class="display display--md">
-      Cada superfície <em>conta</em><br>uma história.
-    </h2>
-  </div>
-
-  <div class="container produtos" id="produtos">
-    <article class="produto" data-product>
-      <div class="produto__media">
-        <img src="assets/fotos/SaveClip.App_420162263_1082008159914691_7068982760293327936_n.webp" alt="Piso em travertino romano" loading="lazy" />
-      </div>
-      <div class="produto__info">
-        <h3 class="produto__title">Piso</h3>
-        <p class="produto__sub">Placas de grande formato em travertino romano</p>
-        <span class="produto__cta">Ver detalhes</span>
-      </div>
-    </article>
-
-    <article class="produto" data-product>
-      <div class="produto__media">
-        <img src="assets/fotos/ESCADAS.webp" alt="Escada com revestimento em travertino" loading="lazy" style="object-position: 0% center;" />
-      </div>
-      <div class="produto__info">
-        <h3 class="produto__title">Escadas</h3>
-        <p class="produto__sub">Paredes contínuas e painéis com juntas trabalhadas</p>
-        <span class="produto__cta">Ver detalhes</span>
-      </div>
-    </article>
-
-    <article class="produto produto--zoom-forro" data-product>
-      <div class="produto__media">
-        <img src="assets/fotos/FORRO.webp" alt="Forro em travertino" loading="lazy" />
-      </div>
-      <div class="produto__info">
-        <h3 class="produto__title">Forro</h3>
-        <p class="produto__sub">Aplicação contínua em ambientes integrados</p>
-        <span class="produto__cta">Ver detalhes</span>
-      </div>
-    </article>
-
-    <article class="produto" data-product>
-      <div class="produto__media">
-        <img src="assets/fotos/REVESTIMENTO%20DE%20PORTA.webp" alt="Revestimento de porta em travertino" loading="lazy" style="object-position: 30% center;" />
-      </div>
-      <div class="produto__info">
-        <h3 class="produto__title">Revestimento de porta</h3>
-        <p class="produto__sub">Detalhe construtivo com peças sob medida</p>
-        <span class="produto__cta">Ver detalhes</span>
-      </div>
-    </article>
-
-    <article class="produto" data-product>
-      <div class="produto__media">
-        <img src="assets/fotos/ambiente-diversos-benderarquitetura-travertino-romano-bruto-rosso-verona-marrom-emperador-light-onix-caramelo-5-scaled.webp" alt="Móveis personalizados em travertino" loading="lazy" style="object-position: 85% center;" />
-      </div>
-      <div class="produto__info">
-        <h3 class="produto__title">Móveis personalizados</h3>
-        <p class="produto__sub">Bancadas, mesas e peças escultóricas sob desenho</p>
-        <span class="produto__cta">Ver detalhes</span>
-      </div>
-    </article>
-
-    <article class="produto" data-product>
-      <div class="produto__media">
-        <img src="assets/fotos/CUBA%20ESCULPIDA.webp" alt="Cuba esculpida em travertino" loading="lazy" />
-      </div>
-      <div class="produto__info">
-        <h3 class="produto__title">Cuba esculpida</h3>
-        <p class="produto__sub">Peças escultóricas talhadas em bloco único</p>
-        <span class="produto__cta">Ver detalhes</span>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ─── ORIGEM ─── -->
-<section class="origem" id="origem">
-  <div class="container origem__inner">
-    <div class="origem__main">
-      <span class="eyebrow">A Origem</span>
-      <h2 class="display display--lg">
-        Tivoli, <em>onde a pedra</em><br>aprendeu a durar.
-      </h2>
-      <p class="body">
-        As pedreiras de Tivoli, ao norte de Roma, abasteceram o Coliseu,
-        a Basílica de São Pedro e a Fontana di Trevi. Permanecem em
-        operação há mais de dois milênios. Toda peça que chega ao Brasil
-        pela NAVONA traz consigo essa linhagem — não como referência
-        decorativa, mas como matéria de origem rastreável.
-      </p>
-    </div>
-
-    <figure class="origem__quote">
-      <blockquote>
-        <span class="display display--quote">
-          “Marmor durat. Travertinum durat amplius.”
-        </span>
-      </blockquote>
-      <figcaption>O mármore dura muito. O travertino dura ainda mais.</figcaption>
-    </figure>
-  </div>
-
-  <div class="origem__strip">
-    <span>Tivoli</span><i></i>
-    <span>Roma</span><i></i>
-    <span>Lazio</span><i></i>
-    <span>Itália</span>
-  </div>
-</section>
-
-<!-- ─── MATERIAL ─── -->
-<section class="material" id="material">
-  <div class="material__media">
-    <model-viewer
-      class="material__model"
-      src="assets/3d/peca.glb"
-      alt="Peça em travertino romano"
-      camera-controls
-      auto-rotate
-      auto-rotate-delay="0"
-      rotation-per-second="6deg"
-      shadow-intensity="1"
-      exposure="1"
-      interaction-prompt="none"
-      loading="lazy"
-      reveal="auto">
-      <div class="model-loader" slot="poster">
-        <span class="model-loader__ring"></span>
-        <span class="model-loader__label">Carregando peça em travertino…</span>
-      </div>
-    </model-viewer>
-  </div>
-  <div class="material__text">
-    <span class="eyebrow eyebrow--dark">Explore o material</span>
-    <h2 class="display display--md">Travertino Romano.</h2>
-    <p class="body">
-      Formado em fontes termais a céu aberto na região de Tivoli, o travertino
-      romano é uma rocha calcária sedimentar de formação milenar. Tons
-      amanteigados, cavidades naturais e camadas estratificadas conservam o
-      registro do tempo geológico que o produziu.
-    </p>
-
-    <dl class="specs">
-      <div class="specs__row">
-        <dt>Origem</dt>
-        <dd>Tivoli — Lazio, Itália</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Densidade</dt>
-        <dd>2,4 — 2,5 g/cm³</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Absorção</dt>
-        <dd>Inferior a 5%</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Acabamentos</dt>
-        <dd>Bruto · Escovado · Polido · Raspado</dd>
-      </div>
-      <div class="specs__row">
-        <dt>Formatos</dt>
-        <dd>Placas, chapas, mosaicos e peças sob medida</dd>
-      </div>
-    </dl>
-  </div>
-</section>
-
-<!-- ─── CONTATO ─── -->
-<section class="contato" id="contato">
-  <div class="container contato__inner">
-
-    <div class="contato__main">
-      <span class="eyebrow">Contato</span>
-      <h2 class="contato__title">Vamos conversar<br>sobre o seu projeto.</h2>
-      <p class="contato__lede">
-        Nossa equipe técnica está pronta para entender as necessidades
-        do seu projeto e recomendar a melhor solução em travertino romano.
-      </p>
-      <button type="button" class="contato__btn" data-open-form>Solicitar orçamento</button>
-    </div>
-
-    <aside class="contato__side">
-      <div class="contato__block">
-        <span class="eyebrow">Escritório</span>
-        <h3 class="contato__office">São Paulo</h3>
-        <address class="contato__address">
-          Avenida Magalhães de Castro, 4800<br>
-          Torre 1, Edifício Capital · Cj. 201<br>
-          Jardim Panorama — São Paulo, SP
-        </address>
-      </div>
-
-      <hr class="contato__hr" />
-
-      <div class="contato__block">
-        <span class="eyebrow">Contato geral</span>
-        <ul class="contato__list">
-          <li><a href="mailto:contato@navona.com.br">contato@navona.com.br</a></li>
-          <li><a href="https://wa.me/5511999600222" target="_blank" rel="noopener">+55 11 99960-0222</a></li>
-        </ul>
-      </div>
-    </aside>
-
-    <div class="contato__newsletter">
-      <span class="eyebrow">Newsletter</span>
-      <p class="contato__nl-cap">Receba novidades sobre projetos e seleções de travertino.</p>
-      <form class="contato__nl-form" data-newsletter novalidate>
-        <input type="email" placeholder="seu@email.com" required aria-label="Seu e-mail" />
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-<!-- ─── MODAL FORMULÁRIO ─── -->
-<div class="form-modal" id="formModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Solicitar orçamento">
-  <div class="form-modal__panel" role="document">
-    <button class="form-modal__close" type="button" aria-label="Fechar">Fechar</button>
-    <span class="eyebrow">Solicitar orçamento</span>
-    <h3 class="form-modal__title">Conte-nos sobre <em>o projeto.</em></h3>
-    <form class="form-modal__form" data-orcamento>
-      <label class="field">
-        <span>Nome</span>
-        <input type="text" name="nome" required autocomplete="name" />
-      </label>
-      <label class="field">
-        <span>E-mail</span>
-        <input type="email" name="email" required autocomplete="email" />
-      </label>
-      <label class="field">
-        <span>Telefone</span>
-        <input type="tel" name="telefone" autocomplete="tel" />
-      </label>
-      <div class="form-modal__actions">
-        <button type="submit" class="form-modal__submit">Enviar</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<!-- ─── FOOTER ─── -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__brand">
+  <!-- ─── NAV ─── -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="NAVONA">
       <img src="assets/logo-branco.png" alt="NAVONA" />
-      <span>Travertino Romano</span>
-    </div>
-    <nav class="footer__nav" aria-label="Rodapé">
+    </a>
+    <nav class="nav__links" aria-label="Navegação principal">
       <a href="#projetos">Produtos</a>
       <a href="#origem">Origem</a>
       <a href="#material">Material</a>
       <a href="#contato">Contato</a>
     </nav>
-    <p class="footer__legal">
-      © <span id="year">2026</span> NAVONA · Todos os direitos reservados.
-    </p>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="top">
+    <video class="hero__video" autoplay muted loop playsinline webkit-playsinline="true" preload="auto"
+      poster="assets/fotos/pedreira-hero.webp">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <img class="hero__fallback" src="assets/fotos/pedreira-hero.webp" alt="Pedreira de travertino em Tivoli" />
+    <div class="hero__veil"></div>
+
+    <div class="hero__content">
+      <h1 class="hero__title">A pedra <em>que atravessa séculos</em></h1>
+    </div>
+  </section>
+
+  <!-- ─── CTA DIVIDER ─── -->
+  <section class="cta" aria-label="Divisor — solicitar orçamento">
+    <div class="cta__inner">
+      <button type="button" class="cta__btn" data-open-form>Solicitar orçamento</button>
+    </div>
+  </section>
+
+  <!-- ─── MANIFESTO ─── -->
+  <section class="manifesto">
+    <div class="container manifesto__inner">
+      <div class="manifesto__main">
+        <span class="eyebrow">A Marca</span>
+        <h2 class="display display--lg" style="font-size: 53.406px;">
+          Navona, especializada<br>exclusivamente em<br>Travertino Romano.
+        </h2>
+        <div class="manifesto__body">
+          <p class="lede">
+            A Navona é especializada exclusivamente em Travertino Romano,
+            uma pedra natural reconhecida por sua beleza atemporal, textura
+            marcante e elegância natural. Inspirada na tradição da arquitetura
+            italiana, a marca oferece materiais selecionados que valorizam
+            ambientes com autenticidade, sofisticação e personalidade.
+          </p>
+          <p class="lede">
+            Cada peça é escolhida pela leitura da pedra e pela aderência ao
+            projeto. Não trabalhamos com coleções prontas, operamos caso a
+            caso, com curadoria direta da pedreira de Tivoli ao destino final,
+            garantindo procedência e singularidade em cada aplicação.
+          </p>
+        </div>
+      </div>
+
+      <dl class="manifesto__stats">
+        <div class="manifesto__stat">
+          <dt class="manifesto__stat-num"><span data-count="100" data-suffix="%">100%</span> Natural</dt>
+          <dd class="manifesto__stat-label">Pedra formada mineralmente.</dd>
+        </div>
+        <div class="manifesto__stat">
+          <dt class="manifesto__stat-num">Projetos exclusivos</dt>
+          <dd class="manifesto__stat-label">Cada aplicação é selecionada e adaptada ao desenho do projeto.</dd>
+        </div>
+        <div class="manifesto__stat">
+          <dt class="manifesto__stat-num">Alta durabilidade</dt>
+          <dd class="manifesto__stat-label">Resistente ao tempo e às intempéries.</dd>
+        </div>
+        <div class="manifesto__stat">
+          <dt class="manifesto__stat-num">Um único material</dt>
+          <dd class="manifesto__stat-label">Infinitas possibilidades.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ─── PRODUTOS / GRID ─── -->
+  <section class="projetos" id="projetos">
+    <div class="container projetos__head">
+      <span class="eyebrow">Produtos</span>
+      <h2 class="display display--md">
+        Cada superfície <em>conta</em><br>uma história.
+      </h2>
+    </div>
+
+    <div class="container produtos" id="produtos">
+      <article class="produto" data-product>
+        <div class="produto__media">
+          <img src="assets/fotos/SaveClip.App_420162263_1082008159914691_7068982760293327936_n.webp"
+            alt="Piso em travertino romano" loading="lazy" />
+        </div>
+        <div class="produto__info">
+          <h3 class="produto__title">Piso</h3>
+          <p class="produto__sub">Placas de grande formato em travertino romano</p>
+          <span class="produto__cta">Ver detalhes</span>
+        </div>
+      </article>
+
+      <article class="produto" data-product>
+        <div class="produto__media">
+          <img src="assets/fotos/ESCADAS.webp" alt="Escada com revestimento em travertino" loading="lazy"
+            style="object-position: 0% center;" />
+        </div>
+        <div class="produto__info">
+          <h3 class="produto__title">Escadas</h3>
+          <p class="produto__sub">Paredes contínuas e painéis com juntas trabalhadas</p>
+          <span class="produto__cta">Ver detalhes</span>
+        </div>
+      </article>
+
+      <article class="produto produto--zoom-forro" data-product>
+        <div class="produto__media">
+          <img src="assets/fotos/FORRO.webp" alt="Forro em travertino" loading="lazy" />
+        </div>
+        <div class="produto__info">
+          <h3 class="produto__title">Forro</h3>
+          <p class="produto__sub">Aplicação contínua em ambientes integrados</p>
+          <span class="produto__cta">Ver detalhes</span>
+        </div>
+      </article>
+
+      <article class="produto" data-product>
+        <div class="produto__media">
+          <img src="assets/fotos/REVESTIMENTO%20DE%20PORTA.webp" alt="Revestimento de porta em travertino"
+            loading="lazy" style="object-position: 30% center;" />
+        </div>
+        <div class="produto__info">
+          <h3 class="produto__title">Revestimento de porta</h3>
+          <p class="produto__sub">Detalhe construtivo com peças sob medida</p>
+          <span class="produto__cta">Ver detalhes</span>
+        </div>
+      </article>
+
+      <article class="produto" data-product>
+        <div class="produto__media">
+          <img
+            src="assets/fotos/ambiente-diversos-benderarquitetura-travertino-romano-bruto-rosso-verona-marrom-emperador-light-onix-caramelo-5-scaled.webp"
+            alt="Móveis personalizados em travertino" loading="lazy" style="object-position: 85% center;" />
+        </div>
+        <div class="produto__info">
+          <h3 class="produto__title">Móveis personalizados</h3>
+          <p class="produto__sub">Bancadas, mesas e peças escultóricas sob desenho</p>
+          <span class="produto__cta">Ver detalhes</span>
+        </div>
+      </article>
+
+      <article class="produto" data-product>
+        <div class="produto__media">
+          <img src="assets/fotos/CUBA%20ESCULPIDA.webp" alt="Cuba esculpida em travertino" loading="lazy" />
+        </div>
+        <div class="produto__info">
+          <h3 class="produto__title">Cuba esculpida</h3>
+          <p class="produto__sub">Peças escultóricas talhadas em bloco único</p>
+          <span class="produto__cta">Ver detalhes</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── ORIGEM ─── -->
+  <section class="origem" id="origem">
+    <div class="container origem__inner">
+      <div class="origem__main">
+        <span class="eyebrow">A Origem</span>
+        <h2 class="display display--lg">
+          Tivoli, <em>onde a pedra</em><br>aprendeu a durar.
+        </h2>
+        <p class="body">
+          As pedreiras de Tivoli, ao norte de Roma, abasteceram o Coliseu,
+          a Basílica de São Pedro e a Fontana di Trevi. Permanecem em
+          operação há mais de dois milênios. Toda peça que chega ao Brasil
+          pela NAVONA traz consigo essa linhagem — não como referência
+          decorativa, mas como matéria de origem rastreável.
+        </p>
+      </div>
+
+      <figure class="origem__quote">
+        <blockquote>
+          <span class="display display--quote">
+            “Marmor durat. Travertinum durat amplius.”
+          </span>
+        </blockquote>
+        <figcaption>O mármore dura muito. O travertino dura ainda mais.</figcaption>
+      </figure>
+    </div>
+
+    <div class="origem__strip">
+      <span>Tivoli</span><i></i>
+      <span>Roma</span><i></i>
+      <span>Lazio</span><i></i>
+      <span>Itália</span>
+    </div>
+  </section>
+
+  <!-- ─── MATERIAL ─── -->
+  <section class="material" id="material">
+    <div class="material__media">
+      <model-viewer class="material__model" src="assets/3d/peca.glb" alt="Peça em travertino romano" camera-controls
+        auto-rotate auto-rotate-delay="0" rotation-per-second="6deg" shadow-intensity="1" exposure="1"
+        interaction-prompt="none" loading="lazy" reveal="auto">
+        <div class="model-loader" slot="poster">
+          <span class="model-loader__ring"></span>
+          <span class="model-loader__label">Carregando peça em travertino…</span>
+        </div>
+      </model-viewer>
+    </div>
+    <div class="material__text">
+      <span class="eyebrow eyebrow--dark">Explore o material</span>
+      <h2 class="display display--md">Travertino Romano.</h2>
+      <p class="body">
+        Formado em fontes termais a céu aberto na região de Tivoli, o travertino
+        romano é uma rocha calcária sedimentar de formação milenar. Tons
+        amanteigados, cavidades naturais e camadas estratificadas conservam o
+        registro do tempo geológico que o produziu.
+      </p>
+
+      <dl class="specs">
+        <div class="specs__row">
+          <dt>Origem</dt>
+          <dd>Tivoli — Lazio, Itália</dd>
+        </div>
+        <div class="specs__row">
+          <dt>Densidade</dt>
+          <dd>2,4 — 2,5 g/cm³</dd>
+        </div>
+        <div class="specs__row">
+          <dt>Absorção</dt>
+          <dd>Inferior a 5%</dd>
+        </div>
+        <div class="specs__row">
+          <dt>Acabamentos</dt>
+          <dd>Bruto · Escovado · Polido · Raspado</dd>
+        </div>
+        <div class="specs__row">
+          <dt>Formatos</dt>
+          <dd>Placas, chapas, mosaicos e peças sob medida</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ─── CONTATO ─── -->
+  <section class="contato" id="contato">
+    <div class="container contato__inner">
+
+      <div class="contato__main">
+        <span class="eyebrow">Contato</span>
+        <h2 class="contato__title">Vamos conversar<br>sobre o seu projeto.</h2>
+        <p class="contato__lede">
+          Nossa equipe técnica está pronta para entender as necessidades
+          do seu projeto e recomendar a melhor solução em travertino romano.
+        </p>
+        <button type="button" class="contato__btn" data-open-form>Solicitar orçamento</button>
+      </div>
+
+      <aside class="contato__side">
+        <div class="contato__block">
+          <span class="eyebrow">Escritório</span>
+          <h3 class="contato__office">São Paulo</h3>
+          <address class="contato__address">
+            Avenida Magalhães de Castro, 4800<br>
+            Torre 1, Edifício Capital · Cj. 201<br>
+            Jardim Panorama — São Paulo, SP
+          </address>
+        </div>
+
+        <hr class="contato__hr" />
+
+        <div class="contato__block">
+          <span class="eyebrow">Contato geral</span>
+          <ul class="contato__list">
+            <li><a href="mailto:contato@navona.com.br">contato@navona.com.br</a></li>
+            <li><a href="https://wa.me/5511999600222" target="_blank" rel="noopener">+55 11 99960-0222</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="contato__newsletter">
+        <span class="eyebrow">Newsletter</span>
+        <p class="contato__nl-cap">Receba novidades sobre projetos e seleções de travertino.</p>
+        <form class="contato__nl-form" data-newsletter novalidate>
+          <input type="email" placeholder="seu@email.com" required aria-label="Seu e-mail" />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── MODAL FORMULÁRIO ─── -->
+  <div class="form-modal" id="formModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-label="Solicitar orçamento">
+    <div class="form-modal__panel" role="document">
+      <button class="form-modal__close" type="button" aria-label="Fechar">Fechar</button>
+      <span class="eyebrow">Solicitar orçamento</span>
+      <h3 class="form-modal__title">Conte-nos sobre <em>o projeto.</em></h3>
+      <form class="form-modal__form" data-orcamento>
+        <label class="field">
+          <span>Nome</span>
+          <input type="text" name="nome" required autocomplete="name" />
+        </label>
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label class="field">
+          <span>Telefone</span>
+          <input type="tel" name="telefone" autocomplete="tel" />
+        </label>
+        <div class="form-modal__actions">
+          <button type="submit" class="form-modal__submit">Enviar</button>
+        </div>
+      </form>
+    </div>
   </div>
-</footer>
 
-<!-- ─── LIGHTBOX ─── -->
-<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visualizador de projeto">
-  <button class="lightbox__close" type="button" aria-label="Fechar">Fechar</button>
-  <div class="lightbox__stage">
-    <img class="lightbox__img" alt="" />
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo-branco.png" alt="NAVONA" />
+        <span>Travertino Romano</span>
+      </div>
+      <nav class="footer__nav" aria-label="Rodapé">
+        <a href="#projetos">Produtos</a>
+        <a href="#origem">Origem</a>
+        <a href="#material">Material</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <p class="footer__legal">
+        © <span id="year">2026</span> NAVONA · Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ─── LIGHTBOX ─── -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-label="Visualizador de projeto">
+    <button class="lightbox__close" type="button" aria-label="Fechar">Fechar</button>
+    <div class="lightbox__stage">
+      <img class="lightbox__img" alt="" />
+    </div>
+    <p class="lightbox__caption"></p>
   </div>
-  <p class="lightbox__caption"></p>
-</div>
 
-<button class="floating-cta floating-top" type="button" aria-label="Voltar ao topo" id="backToTop">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 4l0 16M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
+  <button class="floating-cta floating-top" type="button" aria-label="Voltar ao topo" id="backToTop">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 4l0 16M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
 
-<script src="script.js?v=18"></script>
+  <script src="script.js?v=19"></script>
 </body>
+
 </html>
