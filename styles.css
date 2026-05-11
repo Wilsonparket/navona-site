@@ -700,7 +700,31 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   .produtos { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
-  .produtos { grid-template-columns: 1fr; }
+  .produtos.container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .produtos.container::before,
+  .produtos.container::after {
+    content: '';
+    flex: 0 0 calc(50vw - 35vw);
+  }
+  .produtos::-webkit-scrollbar { display: none; }
+  .produto {
+    flex: 0 0 70vw;
+    max-width: 320px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
 }
 
 /* ─────────────────────────────────────────
