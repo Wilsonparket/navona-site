@@ -1,25 +1,56 @@
 (() => {
-  // Hero video: force iOS-friendly autoplay; fall back to image only after retries fail
-  const heroVideo = document.querySelector('.hero__video');
-  const heroSection = document.querySelector('.hero');
-  if (heroVideo && heroSection) {
-    heroVideo.muted = true;
-    heroVideo.setAttribute('muted', '');
-    heroVideo.playsInline = true;
-    let attempts = 0;
-    const tryPlay = () => {
-      const p = heroVideo.play();
-      if (p && typeof p.catch === 'function') {
-        p.catch(() => {
-          attempts++;
-          if (attempts >= 3) heroSection.classList.add('video-failed');
-        });
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  // Reset produtos carousel scroll to start — Safari iOS keeps trying to restore
+  // the previous scroll position, so we reset aggressively at several moments.
+  const produtos = document.getElementById('produtos');
+  if (produtos) {
+    const forceStart = () => {
+      const prevSnap = produtos.style.scrollSnapType;
+      produtos.style.scrollSnapType = 'none';
+      produtos.scrollLeft = 0;
+      if (typeof produtos.scrollTo === 'function') {
+        produtos.scrollTo({ left: 0, top: 0, behavior: 'instant' });
       }
+      setTimeout(() => {
+        produtos.style.scrollSnapType = prevSnap || '';
+      }, 60);
     };
-    heroVideo.addEventListener('canplay', tryPlay, { once: true });
-    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
-    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
-    document.addEventListener('click', tryPlay, { once: true });
+    forceStart();
+    requestAnimationFrame(forceStart);
+    setTimeout(forceStart, 100);
+    setTimeout(forceStart, 400);
+    window.addEventListener('load', forceStart);
+    window.addEventListener('pageshow', forceStart);
+
+    // When the produtos section first becomes visible, if user hasn't scrolled
+    // the carousel themselves, reset to first card.
+    let userScrolled = false;
+    produtos.addEventListener('scroll', () => { userScrolled = true; }, { passive: true, once: true });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !userScrolled) forceStart();
+        });
+      }, { threshold: 0.1 });
+      io.observe(produtos);
+    }
+  }
+
+  // Hero video: let autoplay attribute try natively; hide only after a clear
+  // failure window (no 'playing' event in 2.5s)
+  const heroVideo = document.querySelector('.hero__video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.playsInline = true;
+    let started = false;
+    heroVideo.addEventListener('playing', () => { started = true; }, { once: true });
+    setTimeout(() => {
+      if (started) return;
+      heroVideo.play().then(() => { started = true; }).catch(() => {
+        heroVideo.style.display = 'none';
+      });
+    }, 2500);
   }
 
   const nav = document.getElementById('nav');

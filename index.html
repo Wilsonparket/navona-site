@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=33" />
+  <link rel="stylesheet" href="styles.css?v=41" />
 
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
@@ -39,11 +39,12 @@
 
   <!-- ─── HERO ─── -->
   <section class="hero" id="top">
-    <video class="hero__video" autoplay muted loop playsinline webkit-playsinline="true" preload="auto"
-      poster="assets/fotos/pedreira-hero.webp">
-      <source src="assets/hero.mp4" type="video/mp4" />
-    </video>
-    <img class="hero__fallback" src="assets/fotos/pedreira-hero.webp" alt="Pedreira de travertino em Tivoli" />
+    <div class="hero__media">
+      <img class="hero__fallback" src="assets/fotos/pedreira-hero.webp" alt="Pedreira de travertino em Tivoli">
+      <video class="hero__video" autoplay muted playsinline loop>
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="hero__veil"></div>
 
     <div class="hero__content">
@@ -380,7 +381,7 @@
     </svg>
   </button>
 
-  <script src="script.js?v=19"></script>
+  <script src="script.js?v=27"></script>
 </body>
 
 </html>
